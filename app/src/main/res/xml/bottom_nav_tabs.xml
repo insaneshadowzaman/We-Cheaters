@@ -1,0 +1,14 @@
+<tabs>
+    <tab
+        id="@+id/item_recent"
+        icon="@drawable/ic_recent"
+        title="Recent" />
+    <tab
+        id="@+id/item_popular"
+        icon="@drawable/ic_popular"
+        title="Popular" />
+    <tab
+        id="@+id/item_me"
+        icon="@drawable/ic_me"
+        title="Me" />
+</tabs>

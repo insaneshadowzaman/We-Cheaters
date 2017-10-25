@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:layout_editor_absoluteY="25dp">
+
+    <Button
+        android:id="@+id/keyboard_button_A"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="0dp"
+        android:text="A"
+        app:layout_constraintEnd_toStartOf="@+id/keyboard_button_S"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/keyboard_button_S"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="0dp"
+        android:text="S"
+        app:layout_constraintEnd_toStartOf="@+id/keyboard_button_D"
+        app:layout_constraintStart_toEndOf="@+id/keyboard_button_A"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_button_A" />
+
+    <Button
+        android:id="@+id/keyboard_button_D"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="0dp"
+        android:text="D"
+        app:layout_constraintEnd_toStartOf="@+id/keyboard_button_F"
+        app:layout_constraintStart_toEndOf="@+id/keyboard_button_S"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_button_S" />
+
+    <Button
+        android:id="@+id/keyboard_button_F"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:minHeight="0dp"
+        android:layout_weight="1"
+        android:minWidth="0dp"
+        android:padding="0dp"
+        android:text="F"
+        app:layout_constraintEnd_toStartOf="@+id/keyboard_button_G"
+        app:layout_constraintStart_toEndOf="@+id/keyboard_button_D"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_button_D" />
+
+    <Button
+        android:id="@+id/keyboard_button_G"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:layout_weight="1"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="0dp"
+        android:text="G"
+        app:layout_constraintEnd_toStartOf="@+id/keyboard_button_H"
+        app:layout_constraintStart_toEndOf="@+id/keyboard_button_F"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_button_F" />
+
+    <Button
+        android:id="@+id/keyboard_button_H"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="0dp"
+        android:text="H"
+        app:layout_constraintEnd_toStartOf="@+id/keyboard_button_J"
+        app:layout_constraintStart_toEndOf="@+id/keyboard_button_G"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_button_G" />
+
+    <Button
+        android:id="@+id/keyboard_button_I"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="0dp"
+        android:text="I"
+        app:layout_constraintEnd_toStartOf="@+id/keyboard_button_K"
+        app:layout_constraintStart_toEndOf="@+id/keyboard_button_J"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_button_J" />
+
+    <Button
+        android:id="@+id/keyboard_button_J"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:layout_weight="1"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="0dp"
+        android:text="J"
+        app:layout_constraintEnd_toStartOf="@+id/keyboard_button_I"
+        app:layout_constraintStart_toEndOf="@+id/keyboard_button_H"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_button_H" />
+
+    <Button
+        android:id="@+id/keyboard_button_K"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="0dp"
+        android:text="K"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toStartOf="@+id/keyboard_button_L"
+        app:layout_constraintStart_toEndOf="@+id/keyboard_button_I"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_button_I" />
+
+    <Button
+        android:id="@+id/keyboard_button_L"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="none"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+        android:text="L"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/keyboard_button_K"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_button_K" />
+
+
+</LinearLayout>

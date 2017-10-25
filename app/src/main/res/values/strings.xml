@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name"><b>We Cheaters</b></string>
+    <string name="we_cheaters_logo">We Cheaters logo</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="add_shortcut">Add Shortcut</string>
+
+    <string-array name="keys">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+    </string-array>
+    <string-array name="function_keys">
+        <item>F1</item>
+        <item>F2</item>
+        <item>F3</item>
+        <item>F4</item>
+        <item>F5</item>
+        <item>F6</item>
+        <item>F7</item>
+        <item>F8</item>
+        <item>F9</item>
+        <item>F10</item>
+        <item>F11</item>
+        <item>F12</item>
+    </string-array>
+    <string-array name="punctuations">
+        <item>space</item>
+        <item>`</item>
+        <item>~</item>
+        <item>!</item>
+        <item></item>
+        <item>#</item>
+        <item>$</item>
+        <item>%</item>
+        <item>^</item>
+        <item>&amp;</item>
+        <item>*</item>
+        <item>(</item>
+        <item>)</item>
+        <item>-</item>
+        <item>_</item>
+        <item>=</item>
+        <item>+</item>
+        <item>[</item>
+        <item>]</item>
+        <item>{</item>
+        <item>}</item>
+        <item>\</item>
+        <item>|</item>
+        <item>/</item>
+        <item>'?'</item>
+        <item>.</item>
+        <item>&lt;</item>
+        <item>&gt;</item>
+        <item>,</item>
+    </string-array>
+    <string-array name="special_buttons">
+        <item>insert</item>
+        <item>delete</item>
+        <item>page-up</item>
+        <item>page-down</item>
+        <item>home</item>
+        <item>end</item>
+        <item>print-scr</item>
+        <item>scroll-lock</item>
+        <item>pause</item>
+        <item>up</item>
+        <item>down</item>
+        <item>left</item>
+        <item>right</item>
+        <item>backspace</item>
+    </string-array>
+    <string-array name="hold_keys">
+        <item>left-CTRL</item>
+        <item>left-SHIFT</item>
+        <item>left-ALT</item>
+        <item>CAPS</item>
+        <item>TAB</item>
+        <item>SUPER</item>
+        <item>right-CTRL</item>
+        <item>right-SHIFT</item>
+        <item>right-ALT</item>
+        <item>function</item>
+    </string-array>
+</resources>

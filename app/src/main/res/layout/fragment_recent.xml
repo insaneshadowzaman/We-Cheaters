@@ -1,0 +1,15 @@
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/recentRecyclerView"
+    tools:context="com.learning.insane.wecheaters.RecentFragment">
+
+
+    <TextView
+        android:id="@+id/testCardText"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="Hellotask" />
+
+</android.support.v7.widget.RecyclerView>

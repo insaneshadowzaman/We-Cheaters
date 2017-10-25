@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "91186841731",
+    "firebase_url": "https://firstkotlinapp-26447.firebaseio.com",
+    "project_id": "firstkotlinapp-26447",
+    "storage_bucket": "firstkotlinapp-26447.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91186841731:android:22663ad4d5b6d386",
+        "android_client_info": {
+          "package_name": "com.learning.insane.wecheaters"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "91186841731-nhc0cnmn8g8t0bthc9t3d0fs1a2b0rpf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.learning.insane.wecheaters",
+            "certificate_hash": "336500718b3cf5971d1cfa4e486e7888bf12bad5"
+          }
+        },
+        {
+          "client_id": "91186841731-cf5gv38vbntk061g3lj3sprei3ooldbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRGCISY3ejOLCPWPXyxI_l4-fqO6yJz68"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "91186841731-cf5gv38vbntk061g3lj3sprei3ooldbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
