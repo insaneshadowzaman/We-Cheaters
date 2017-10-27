@@ -13,60 +13,70 @@
         layout="@layout/layout_toolbar" />
 
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" >
 
-        <ScrollView
-        android:layout_height="match_parent"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:paddingBottom="32dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/add_shortcut_name_textview"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:text="Name"
             android:textSize="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@android:color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="@android:color/black"/>
 
         <EditText
             android:id="@+id/add_shortcut_name_edittext"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:ems="10"
             android:hint="Name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_shortcut_name_textview" />
+            android:inputType="textPersonName"/>
+
+
+        <TextView
+            android:id="@+id/add_shortcut_app_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="Software Name"
+            android:textSize="32dp"
+            android:textColor="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/add_shortcut_app_name_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:hint="Name"
+            android:inputType="textPersonName"/>
 
         <TextView
             android:id="@+id/add_shortcut_description_textview"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:text="Description"
             android:textSize="30dp"
-            android:textColor="@android:color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_shortcut_name_edittext" />
+            android:textColor="@android:color/black"/>
 
         <EditText
             android:id="@+id/add_shortcut_description_edittext"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
@@ -74,14 +84,118 @@
             android:hint="Description"
             android:inputType="textMultiLine"
             android:lines="10"
-            android:minLines="2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_shortcut_description_textview" />
+            android:minLines="2"/>
 
-        <include layout="@layout/keyboard"/>
+        <TextView
+            android:id="@+id/add_shortcut_hold_key_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Control Keys"
+            android:textColor="@android:color/black"
+            android:textSize="32sp" />
 
-        </ScrollView>
-    </android.support.constraint.ConstraintLayout>
+
+        <include layout="@layout/control_keyboard" />
+
+
+        <TextView
+            android:id="@+id/letters_and_numbers_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Letters and numbers"
+            android:textColor="@android:color/black"
+            android:textSize="32sp"/>
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/letters_and_numbers_expander"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_duration="500"
+            app:el_expanded="false">
+
+            <include layout="@layout/letters_and_numbers_keyboard"/>
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+        <TextView
+            android:id="@+id/or_textview_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/or"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/function_keys_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Functions keys"
+            android:textColor="@android:color/black"
+            android:textSize="32sp"/>
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/fundtion_keys_expander"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_duration="500"
+            app:el_expanded="false">
+
+            <include layout="@layout/functions_keyboard"/>
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+        <TextView
+            android:id="@+id/or_textview_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/or"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/special_key_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Special buttons"
+            android:textColor="@android:color/black"
+            android:textSize="32sp"/>
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/special_keyboard_expander"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_duration="500"
+            app:el_expanded="false">
+
+            <include layout="@layout/punctuations_keyboard" />
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+        <Button
+            android:id="@+id/button_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Upload"/>
+    </LinearLayout>
+</ScrollView>
 
 </LinearLayout>

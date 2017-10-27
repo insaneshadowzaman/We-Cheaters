@@ -8,104 +8,137 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="add_shortcut">Add Shortcut</string>
 
-    <string-array name="keys">
-        <item>A</item>
-        <item>B</item>
-        <item>C</item>
-        <item>D</item>
-        <item>E</item>
-        <item>F</item>
-        <item>G</item>
-        <item>H</item>
-        <item>I</item>
-        <item>J</item>
-        <item>K</item>
-        <item>L</item>
-        <item>M</item>
-        <item>N</item>
-        <item>P</item>
-        <item>Q</item>
-        <item>R</item>
-        <item>S</item>
-        <item>T</item>
-        <item>U</item>
-        <item>V</item>
-        <item>W</item>
-        <item>X</item>
-        <item>Y</item>
-        <item>Z</item>
-    </string-array>
-    <string-array name="function_keys">
-        <item>F1</item>
-        <item>F2</item>
-        <item>F3</item>
-        <item>F4</item>
-        <item>F5</item>
-        <item>F6</item>
-        <item>F7</item>
-        <item>F8</item>
-        <item>F9</item>
-        <item>F10</item>
-        <item>F11</item>
-        <item>F12</item>
-    </string-array>
-    <string-array name="punctuations">
-        <item>space</item>
-        <item>`</item>
-        <item>~</item>
-        <item>!</item>
-        <item></item>
-        <item>#</item>
-        <item>$</item>
-        <item>%</item>
-        <item>^</item>
-        <item>&amp;</item>
-        <item>*</item>
-        <item>(</item>
-        <item>)</item>
-        <item>-</item>
-        <item>_</item>
-        <item>=</item>
-        <item>+</item>
-        <item>[</item>
-        <item>]</item>
-        <item>{</item>
-        <item>}</item>
-        <item>\</item>
-        <item>|</item>
-        <item>/</item>
-        <item>'?'</item>
-        <item>.</item>
-        <item>&lt;</item>
-        <item>&gt;</item>
-        <item>,</item>
-    </string-array>
-    <string-array name="special_buttons">
-        <item>insert</item>
-        <item>delete</item>
-        <item>page-up</item>
-        <item>page-down</item>
-        <item>home</item>
-        <item>end</item>
-        <item>print-scr</item>
-        <item>scroll-lock</item>
-        <item>pause</item>
-        <item>up</item>
-        <item>down</item>
-        <item>left</item>
-        <item>right</item>
-        <item>backspace</item>
-    </string-array>
-    <string-array name="hold_keys">
-        <item>left-CTRL</item>
-        <item>left-SHIFT</item>
-        <item>left-ALT</item>
-        <item>CAPS</item>
-        <item>TAB</item>
-        <item>SUPER</item>
-        <item>right-CTRL</item>
-        <item>right-SHIFT</item>
-        <item>right-ALT</item>
-        <item>function</item>
-    </string-array>
+    <!--Special Characters-->
+
+    <string name="symbol_33">&#033;</string>
+    <string name="symbol_34">&#034;</string>
+    <string name="symbol_35">&#035;</string>
+    <string name="symbol_36">&#036;</string>
+    <string name="symbol_37">&#037;</string>
+    <string name="symbol_38">&#038;</string>
+    <string name="symbol_39">&#039;</string>
+    <string name="symbol_40">&#040;</string>
+    <string name="symbol_41">&#041;</string>
+    <string name="symbol_42">&#042;</string>
+    <string name="symbol_43">&#043;</string>
+    <string name="symbol_44">&#044;</string>
+    <string name="symbol_45">&#045;</string>
+    <string name="symbol_46">&#046;</string>
+
+    <string name="symbol_58">&#058;</string>
+    <string name="symbol_59">&#059;</string>
+    <string name="symbol_60">&#060;</string>
+    <string name="symbol_61">&#061;</string>
+    <string name="symbol_62">&#062;</string>
+    <string name="symbol_63">and</string>
+    <string name="symbol_64">que</string>
+
+    <string name="symbol_91">&#091;</string>
+    <string name="symbol_92">&#092;</string>
+    <string name="symbol_93">&#093;</string>
+    <string name="symbol_94">&#094;</string>
+    <string name="symbol_95">&#095;</string>
+    <string name="symbol_96">&#096;</string>
+
+    <string name="symbol_123">&#123;</string>
+    <string name="symbol_124">&#124;</string>
+    <string name="symbol_125">&#125;</string>
+    <string name="symbol_126">&#126;</string>
+
+    <!--End of special characters-->
+
+    <!--letters-->
+
+    <string name="letter_A">&#065;</string>
+    <string name="letter_B">&#066;</string>
+    <string name="letter_C">&#067;</string>
+    <string name="letter_D">&#068;</string>
+    <string name="letter_E">&#069;</string>
+    <string name="letter_F">&#070;</string>
+    <string name="letter_G">&#071;</string>
+    <string name="letter_H">&#072;</string>
+    <string name="letter_I">&#073;</string>
+    <string name="letter_J">&#074;</string>
+    <string name="letter_K">&#075;</string>
+    <string name="letter_L">&#076;</string>
+    <string name="letter_M">&#077;</string>
+    <string name="letter_N">&#078;</string>
+    <string name="letter_O">&#079;</string>
+    <string name="letter_P">&#080;</string>
+    <string name="letter_Q">&#081;</string>
+    <string name="letter_R">&#082;</string>
+    <string name="letter_S">&#083;</string>
+    <string name="letter_T">&#084;</string>
+    <string name="letter_U">&#085;</string>
+    <string name="letter_V">&#086;</string>
+    <string name="letter_W">&#087;</string>
+    <string name="letter_X">&#088;</string>
+    <string name="letter_Y">&#089;</string>
+    <string name="letter_Z">&#090;</string>
+    <string name="letter_space">&#032;</string>
+
+    <!--End of letters-->
+
+    <!--Numbers-->
+
+    <string name="number_0">&#048;</string>
+    <string name="number_1">&#049;</string>
+    <string name="number_2">&#050;</string>
+    <string name="number_3">&#051;</string>
+    <string name="number_4">&#052;</string>
+    <string name="number_5">&#053;</string>
+    <string name="number_6">&#054;</string>
+    <string name="number_7">&#055;</string>
+    <string name="number_8">&#056;</string>
+    <string name="number_9">&#057;</string>
+
+    <!--End of numbers-->
+
+    <!--Functions-->
+
+    <string name="function_F1">F1</string>
+    <string name="function_F2">F2</string>
+    <string name="function_F3">F3</string>
+    <string name="function_F4">F4</string>
+    <string name="function_F5">F5</string>
+    <string name="function_F6">F6</string>
+    <string name="function_F7">F7</string>
+    <string name="function_F8">F8</string>
+    <string name="function_F9">F9</string>
+    <string name="function_F10">F10</string>
+    <string name="function_F11">F11</string>
+    <string name="function_F12">F12</string>
+    <string name="or">- OR -</string>
+
+    <!--End of functions-->
+
+    <!--control_key-->
+    <string name="control_key_ins">insert</string>
+    <string name="control_key_del">delete</string>
+    <string name="control_key_page_up">page-up</string>
+    <string name="control_key_page_down">page-down</string>
+    <string name="control_key_home">home</string>
+    <string name="control_key_end">end</string>
+    <string name="control_key_prnt">print-scr</string>
+    <string name="control_key_scr">scroll-lock</string>
+    <string name="control_key_pause">pause</string>
+    <string name="control_key_up">up</string>
+    <string name="control_key_down">down</string>
+    <string name="control_key_left">left</string>
+    <string name="control_key_right">right</string>
+    <string name="control_key_bck_space">backspace</string>
+    <!--End of control key-->
+
+    <!--Hold Keys-->
+    <string name="hold_key_left_ctrl">left-CTRL</string>
+    <string name="hold_key_left_shift">left-SHIFT</string>
+    <string name="hold_key_left_alt">left-ALT</string>
+    <string name="hold_key_caps">CAPS</string>
+    <string name="hold_key_tab">TAB</string>
+    <string name="hold_key_super">SUPER</string>
+    <string name="hold_key_right_ctrl">right-CTRL</string>
+    <string name="hold_key_right_shift">right-SHIFT</string>
+    <string name="hold_key_right_alt">right-ALT</string>
+    <string name="hold_key_fn">function</string>
+    <!--Hold keys-->
 </resources>

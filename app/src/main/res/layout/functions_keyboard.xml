@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/keyboard_row_function"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        style="?android:attr/buttonBarButtonStyle" >
+
+        <Button
+            android:id="@+id/keyboard_button_F1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F1"
+            app:layout_constraintEnd_toStartOf="@id/keyboard_button_F2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/keyboard_button_F2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F2"
+            app:layout_constraintEnd_toStartOf="@id/keyboard_button_F3"
+            app:layout_constraintStart_toEndOf="@id/keyboard_button_F1"
+            app:layout_constraintTop_toTopOf="@id/keyboard_button_F1" />
+
+        <Button
+            android:id="@+id/keyboard_button_F3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F3"
+            app:layout_constraintEnd_toStartOf="@id/keyboard_button_F4"
+            app:layout_constraintStart_toEndOf="@id/keyboard_button_F2"
+            app:layout_constraintTop_toTopOf="@id/keyboard_button_F2" />
+        <Button
+            android:id="@+id/keyboard_button_F4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F4"
+            app:layout_constraintEnd_toStartOf="@id/keyboard_button_F5"
+            app:layout_constraintStart_toEndOf="@id/keyboard_button_F3"
+            app:layout_constraintTop_toTopOf="@id/keyboard_button_F3" />
+        <Button
+            android:id="@+id/keyboard_button_F5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F5"
+            app:layout_constraintEnd_toStartOf="@id/keyboard_button_F6"
+            app:layout_constraintStart_toEndOf="@id/keyboard_button_F4"
+            app:layout_constraintTop_toTopOf="@id/keyboard_button_F4" />
+        <Button
+            android:id="@+id/keyboard_button_F6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/keyboard_button_F5"
+            app:layout_constraintTop_toTopOf="@id/keyboard_button_F5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyboard_row_function2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        style="?android:attr/buttonBarButtonStyle" >
+
+        <Button
+            android:id="@+id/keyboard_button_F7"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F7"/>
+
+        <Button
+            android:id="@+id/keyboard_button_F8"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F8"/>
+
+        <Button
+            android:id="@+id/keyboard_button_F9"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F9"/>
+
+        <Button
+            android:id="@+id/keyboard_button_F10"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F10"/>
+
+        <Button
+            android:id="@+id/keyboard_button_F11"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F11"/>
+
+        <Button
+            android:id="@+id/keyboard_button_F12"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/function_F12"/>
+
+    </LinearLayout>
+
+</LinearLayout>

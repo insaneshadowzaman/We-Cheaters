@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="12dp"
+    android:paddingRight="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/shortcut_vote_count"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_blue_bright"
+        android:gravity="center"
+        android:text="5"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shortcut_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:clickable="false"
+        android:text="Shortcut Name"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/shortcut_vote_count"
+        app:layout_constraintTop_toTopOf="@+id/shortcut_vote_count" />
+
+    <TextView
+        android:id="@+id/shortcut_uploader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Uploaded by Rahat Zaman"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/shortcut_vote_count"
+        app:layout_constraintTop_toBottomOf="@+id/shortcut_name" />
+
+    <TextView
+        android:id="@+id/shortcut_timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3 months ago"
+        android:textSize="8sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shortcut_uploader" />
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:id="@+id/description_expander"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:el_duration="500"
+        app:el_expanded="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/shortcut_vote_count"
+        app:layout_constraintTop_toBottomOf="@id/shortcut_uploader">
+
+        <TextView
+            android:id="@+id/shortcut_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is a test description of the shortcut. It will be changed programmaticially" />
+
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+    <LinearLayout
+        android:id="@+id/shortcut_key_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@id/shortcut_vote_count"
+        app:layout_constraintTop_toBottomOf="@id/description_expander">
+
+        <TextView
+            android:id="@+id/first_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/secondaryColor"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="CTRL"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/shortcut_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="+"
+            android:textSize="21sp" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
