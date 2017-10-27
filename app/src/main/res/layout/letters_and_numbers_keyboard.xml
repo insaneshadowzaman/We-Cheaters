@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/keyboard_row_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        style="?android:attr/buttonBarButtonStyle" >
+
+        <Button
+            android:id="@+id/keyboard_button_49"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_1"/>
+
+        <Button
+            android:id="@+id/keyboard_button_50"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_2"/>
+
+        <Button
+            android:id="@+id/keyboard_button_51"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_3"/>
+
+        <Button
+            android:id="@+id/keyboard_button_52"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_4"/>
+
+        <Button
+            android:id="@+id/keyboard_button_53"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_5"/>
+
+        <Button
+            android:id="@+id/keyboard_button_54"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_6"/>
+
+        <Button
+            android:id="@+id/keyboard_button_55"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_7"/>
+
+        <Button
+            android:id="@+id/keyboard_button_56"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_8"/>
+
+        <Button
+            android:id="@+id/keyboard_button_57"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_9"/>
+
+        <Button
+            android:id="@+id/keyboard_button_48"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/number_0"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyboard_row_qwerty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        style="?android:attr/buttonBarButtonStyle" >
+
+
+        <Button
+            android:id="@+id/keyboard_button_Q"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_Q"/>
+
+        <Button
+            android:id="@+id/keyboard_button_W"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_W"/>
+
+        <Button
+            android:id="@+id/keyboard_button_E"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_E"/>
+
+        <Button
+            android:id="@+id/keyboard_button_R"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_R"/>
+
+        <Button
+            android:id="@+id/keyboard_button_T"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_T"/>
+
+        <Button
+            android:id="@+id/keyboard_button_Y"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:minWidth="0dp"
+            android:text="@string/letter_Y"/>
+
+        <Button
+            android:id="@+id/keyboard_button_U"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:minWidth="0dp"
+            android:text="@string/letter_U"/>
+
+        <Button
+            android:id="@+id/keyboard_button_I"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_I"/>
+
+        <Button
+            android:id="@+id/keyboard_button_O"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_O"/>
+
+        <Button
+            android:id="@+id/keyboard_button_P"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_weight="1"
+            android:text="@string/letter_P"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyboard_row_asdfgh"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        style="?attr/buttonBarStyle"
+        android:layout_height="wrap_content">
+
+
+    <Button
+        android:id="@+id/keyboard_button_A"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        style="?android:attr/buttonBarButtonStyle"
+        android:text="@string/letter_A"/>
+
+    <Button
+        android:id="@+id/keyboard_button_S"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        style="?android:attr/buttonBarButtonStyle"
+        android:text="@string/letter_S"/>
+
+    <Button
+        android:id="@+id/keyboard_button_D"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        style="?android:attr/buttonBarButtonStyle"
+        android:text="@string/letter_D"/>
+
+    <Button
+        android:id="@+id/keyboard_button_F"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minWidth="0dp"
+        style="?android:attr/buttonBarButtonStyle"
+        android:text="@string/letter_F"/>
+
+    <Button
+        android:id="@+id/keyboard_button_G"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minWidth="0dp"
+        style="?android:attr/buttonBarButtonStyle"
+        android:text="@string/letter_G"/>
+
+    <Button
+        android:id="@+id/keyboard_button_H"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:minWidth="0dp"
+        android:text="@string/letter_H"/>
+
+    <Button
+        android:id="@+id/keyboard_button_J"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:minWidth="0dp"
+        android:text="@string/letter_J"/>
+
+    <Button
+        android:id="@+id/keyboard_button_K"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_weight="1"
+        android:text="@string/letter_K"/>
+
+    <Button
+        android:id="@+id/keyboard_button_L"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_weight="1"
+        android:text="@string/letter_L"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyboard_row_zxcvbn"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        style="?attr/buttonBarStyle"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/keyboard_button_Z"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_Z"/>
+
+        <Button
+            android:id="@+id/keyboard_button_X"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_X"/>
+
+        <Button
+            android:id="@+id/keyboard_button_C"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_C"/>
+
+        <Button
+            android:id="@+id/keyboard_button_V"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_V"/>
+
+        <Button
+            android:id="@+id/keyboard_button_B"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/letter_B"/>
+
+        <Button
+            android:id="@+id/keyboard_button_N"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:minWidth="0dp"
+            android:text="@string/letter_N"/>
+
+        <Button
+            android:id="@+id/keyboard_button_M"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:minWidth="0dp"
+            android:text="@string/letter_M"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/keyboard_button_space"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="@string/letter_space"/>
+
+</LinearLayout>

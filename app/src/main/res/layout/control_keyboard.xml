@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/hold_key_container"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/keyboard_control_button_left_ctrl"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/hold_key_left_ctrl"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/keyboard_control_button_right_ctrl"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/hold_key_right_ctrl"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/keyboard_control_button_left_alt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/hold_key_left_alt"/>
+
+        <Button
+            android:id="@+id/keyboard_control_button_right_alt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/hold_key_right_alt"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/keyboard_control_button_left_shift"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/hold_key_left_shift"/>
+
+        <Button
+            android:id="@+id/keyboard_control_button_right_shift"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/hold_key_right_shift"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/keyboard_control_button_caps"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/hold_key_caps"/>
+
+        <Button
+            android:id="@+id/keyboard_control_button_tab"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/hold_key_tab"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/keyboard_control_button_super"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/hold_key_super"/>
+
+        <Button
+            android:id="@+id/keyboard_control_button_function"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/hold_key_fn"/>
+
+    </LinearLayout>
+
+</LinearLayout>
