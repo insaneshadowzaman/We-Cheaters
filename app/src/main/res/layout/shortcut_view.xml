@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout android:id="@+id/shortcut_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -41,19 +42,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Uploaded by Rahat Zaman"
+        android:text="Uploaded by ..."
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/shortcut_vote_count"
         app:layout_constraintTop_toBottomOf="@+id/shortcut_name" />
-
-    <TextView
-        android:id="@+id/shortcut_timestamp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="3 months ago"
-        android:textSize="8sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/shortcut_uploader" />
 
     <net.cachapa.expandablelayout.ExpandableLayout
         android:id="@+id/description_expander"
@@ -63,7 +55,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         app:el_duration="500"
-        app:el_expanded="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/shortcut_vote_count"
         app:layout_constraintTop_toBottomOf="@id/shortcut_uploader">
@@ -76,34 +67,31 @@
 
     </net.cachapa.expandablelayout.ExpandableLayout>
 
-    <LinearLayout
-        android:id="@+id/shortcut_key_layout"
+    <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:orientation="horizontal"
         app:layout_constraintStart_toEndOf="@id/shortcut_vote_count"
         app:layout_constraintTop_toBottomOf="@id/description_expander">
 
-        <TextView
-            android:id="@+id/first_key"
+        <LinearLayout
+            android:id="@+id/shortcut_key_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/secondaryColor"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="CTRL"
-            android:textSize="15sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/shortcut_plus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:text="+"
-            android:textSize="21sp" />
+        </LinearLayout>
 
-    </LinearLayout>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/shortcut_fav_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:text="FAV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shortcut_name" />
+
 </android.support.constraint.ConstraintLayout>

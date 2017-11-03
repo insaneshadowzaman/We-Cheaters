@@ -1,4 +1,4 @@
-package com.learning.insane.wecheaters;
+package com.learning.insane.wecheaters.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,21 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.learning.insane.wecheaters.R;
+import com.learning.insane.wecheaters.Util.Constants;
+import com.learning.insane.wecheaters.Util.ShortcutViewHolder;
 import com.learning.insane.wecheaters.model.Shortcut;
-
-import java.util.Map;
 
 public class RecentFragment extends Fragment {
 
-    FirebaseRecyclerAdapter<Shortcut, ShortcutViewHolder> firebaseRecyclerAdapter;
-    RecyclerView mRecyclerView;
-    Query mDatabaseQuery;
+    private FirebaseRecyclerAdapter<Shortcut, ShortcutViewHolder> firebaseRecyclerAdapter;
+    private RecyclerView mRecyclerView;
+    private Query mDatabaseQuery;
 
     public RecentFragment() {
         // Required empty public constructor
@@ -34,12 +34,9 @@ public class RecentFragment extends Fragment {
 
         // Inflate the layout for this fragment
         mRecyclerView =  (RecyclerView) inflater.inflate(R.layout.fragment_recent, container, false);
-
         mRecyclerView.setHasFixedSize(true);
-        mDatabaseQuery = FirebaseDatabase.getInstance().getReference().child("Shortcuts").limitToFirst(10);
-
-
-
+        mDatabaseQuery = FirebaseDatabase.getInstance().getReference().child(Constants.SHORTCUTS).orderByKey().limitToFirst(50);
+        getActivity().getActionBar().setTitle("Favourites");
 
         //RecyclerAdapter Code
         FirebaseRecyclerOptions<Shortcut> options = new FirebaseRecyclerOptions.Builder<Shortcut>()
@@ -58,10 +55,7 @@ public class RecentFragment extends Fragment {
 
                     @Override
                     protected void onBindViewHolder(ShortcutViewHolder shortcutView, int position, Shortcut shortcut) {
-                        shortcutView.setName(shortcut.getName());
-                        shortcutView.setDescription(shortcut.getDescription());
-                        shortcutView.setUploader(shortcut.getOwner());
-                        shortcutView.setVote(shortcut.getVoteCount());
+                        shortcutView.setShortcut(shortcut);
                     }
                 };
         mRecyclerView.setAdapter(firebaseRecyclerAdapter);
@@ -82,41 +76,5 @@ public class RecentFragment extends Fragment {
         super.onStop();
     }
 
-    public static class ShortcutViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView name;
-        public TextView description;
-        public TextView vote;
-        public TextView uploader;
-        public TextView timestamp;
-
-        public ShortcutViewHolder(View itemView) {
-            super(itemView);
-            name = itemView.findViewById(R.id.shortcut_name);
-            description = itemView.findViewById(R.id.shortcut_description);
-            vote = itemView.findViewById(R.id.shortcut_vote_count);
-            uploader = itemView.findViewById(R.id.shortcut_uploader);
-            timestamp = itemView.findViewById(R.id.shortcut_timestamp);
-        }
-
-        public void setName(String name) {
-            this.name.setText(name);
-        }
-
-        public void setDescription(String description) {
-            this.description.setText(description);
-        }
-
-        public void setUploader(String uploader) {
-            this.uploader.setText(uploader);
-        }
-
-        public void setVote(int vote) {
-            this.vote.setText(String.valueOf(vote));
-        }
-
-        public void setTimestamp(Map<String, String> timestamp) {
-
-        }
-    }
 }

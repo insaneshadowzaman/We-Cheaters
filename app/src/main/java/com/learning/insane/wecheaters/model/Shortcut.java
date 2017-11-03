@@ -1,20 +1,61 @@
 package com.learning.insane.wecheaters.model;
 
-import android.support.annotation.Nullable;
-
-import java.util.Map;
-
 public class Shortcut {
+
+    public static final String APP_NAME = "appName";
+    public static final String CAPS = "caps";
+    public static final String DESCRIPTION = "description";
+    public static final String ID = "id";
+    public static final String KEY = "key";
+    public static final String LEFT_CTRL = "leftCtrl";
+    public static final String LEFT_ALT = "leftAlt";
+    public static final String LEFT_SHIFT = "leftShift";
+    public static final String RIGHT_CTRL = "rightCtrl";
+    public static final String RIGHT_ALT = "rightAlt";
+    public static final String RIGHT_SHIFT = "rightShift";
+    public static final String OWNER = "owner";
+    public static final String PREV_SHORTCUT = "previousRequiredShortcutId";
+    public static final String VOTE_COUNT = "voteCount";
+
     public String id, name, description, owner, appName;
-    public int voteCount = 0;
-    public boolean leftCtrl, leftAlt, leftShift, rightShift, rightCtrl, rightAlt, caps, tab;
+    public boolean leftCtrl, leftAlt, leftShift, rightCtrl, rightAlt, rightShift, caps;
     public String key;
     public String previousRequiredShortcutId;
-    public Map<String, String> timeStamp;
-
+    public int voteCount = 0;
 
     public Shortcut() {
-        //requied for firebase
+        //required for firebase
+    }
+
+    public Shortcut(
+            String name,
+            String description,
+            String owner,
+            String appName,
+            boolean leftCtrl,
+            boolean leftAlt,
+            boolean leftShift,
+            boolean rightCtrl,
+            boolean rightAlt,
+            boolean rightShift,
+            boolean caps,
+            String key,
+            String previousRequiredShortcutId)
+    {
+        this.name = name;
+        this.description = description;
+        this.owner = owner;
+        this.appName = appName;
+        this.leftCtrl = leftCtrl;
+        this.leftAlt = leftAlt;
+        this.leftShift = leftShift;
+        this.rightShift = rightShift;
+        this.rightCtrl = rightCtrl;
+        this.rightAlt = rightAlt;
+        this.caps = caps;
+        this.key = key;
+        this.previousRequiredShortcutId = previousRequiredShortcutId;
+        voteCount = 0;
     }
 
     public void setId(String id) {
@@ -29,7 +70,7 @@ public class Shortcut {
         this.description = description;
     }
 
-    public void setOwner(@Nullable String owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 
@@ -61,17 +102,9 @@ public class Shortcut {
         this.caps = caps;
     }
 
-    public void setTab(boolean tab) {
-        this.tab = tab;
-    }
-
     public void setKey(String key) {
         this.key = key;
     }
-
-//    public void setTimeStamp(Map<String, String> time) {
-//        this.timeStamp = time;
-//    }
 
     public void setPreviousRequiredShortcutId(String previousRequiredShortcutId) {
         this.previousRequiredShortcutId = previousRequiredShortcutId;
@@ -133,10 +166,6 @@ public class Shortcut {
         return caps;
     }
 
-    public boolean isTab() {
-        return tab;
-    }
-
     public String getKey() {
         return key;
     }
@@ -145,39 +174,12 @@ public class Shortcut {
         return previousRequiredShortcutId;
     }
 
-//    public Map<String, String> getTimeStamp() {
-//        return timeStamp;
-//    }
-
     public void setAppName(String appName) {
         this.appName = appName;
     }
 
-    /**
-     * Returns a string representation of the object. In general, the
-     * {@code toString} method returns a string that
-     * "textually represents" this object. The result should
-     * be a concise but informative representation that is easy for a
-     * person to read.
-     * It is recommended that all subclasses override this method.
-     * <p>
-     * The {@code toString} method for class {@code Object}
-     * returns a string consisting of the name of the class of which the
-     * object is an instance, the at-sign character `{@code @}', and
-     * the unsigned hexadecimal representation of the hash code of the
-     * object. In other words, this method returns a string equal to the
-     * value of:
-     * <blockquote>
-     * <pre>
-     * getClass().getName() + '@' + Integer.toHexString(hashCode())
-     * </pre></blockquote>
-     *
-     * @return a string representation of the object.
-     */
     @Override
     public String toString() {
-        return id + " {\n"
-                + "name : " + name
-                + "\n}\n";
+        return getName() + ": " + getId();
     }
 }

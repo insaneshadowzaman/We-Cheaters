@@ -1,8 +1,10 @@
 package com.learning.insane.wecheaters;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,17 +12,17 @@ import android.widget.Button;
 import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.learning.insane.wecheaters.fragments.FavouritesFragment;
+import com.learning.insane.wecheaters.fragments.RecentFragment;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
 
 public class HomeActivity extends Activity {
 
-    Toolbar toolbar;
-    Button addButton;
+    private Toolbar toolbar;
+    private Button addButton;
+    private Integer currentFragment;
 
-
-    //Test main RecyclerView
-//    RecyclerView mRecyclerView;
-//    Query mQuery;
-//    FirebaseRecyclerAdapter<Shortcut, ViewHolder> firebaseRecyclerAdapter;
 
     public static final String RECENT = "Recent", POPULAR = "Popular", ME = "Me";
     @Override
@@ -33,35 +35,44 @@ public class HomeActivity extends Activity {
 
         setActionBar(toolbar);
 
-        RecentFragment recentFragment = new RecentFragment();
-        getFragmentManager().beginTransaction().add(R.id.contentContainer, recentFragment).commit();
+        getFragmentManager().beginTransaction().add(R.id.contentContainer, new RecentFragment()).commit();
+        currentFragment = 0;
 
-//        BottomBar bottomBar = findViewById(R.id.bottom_navigation_bar);
-//        bottomBar.setActiveTabColor(getResources().getColor(android.R.color.holo_red_dark));
-//        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
-//            @Override
-//            public void onTabSelected(@IdRes int tabId) {
-//                switch (tabId) {
-//                    case R.id.item_recent:
-//                        toolbar.setSubtitle(RECENT);
-////                        RecentFragment recentFragment = new RecentFragment();
-////                        getFragmentManager().beginTransaction().replace(R.id.contentContainer, recentFragment).commit();
-//                        break;
-//                    case R.id.item_popular:
-//                        toolbar.setSubtitle(POPULAR);
-////                        RecentFragment recentFragment = new RecentFragment();
-////                        getFragmentManager().beginTransaction().replace(R.id.contentContainer, recentFragment).commit();
-//                        // TODO:
-//                        break;
-//                    case R.id.item_me:
-//                        toolbar.setSubtitle(ME);
-////                        RecentFragment recentFragment = new RecentFragment();
-////                        getFragmentManager().beginTransaction().replace(R.id.contentContainer, recentFragment).commit();
-//                        // TODO:
-//                        break;
-//                }
-//            }
-//        });
+        BottomBar bottomBar = findViewById(R.id.bottom_navigation_bar);
+        bottomBar.setActiveTabColor(getResources().getColor(android.R.color.holo_red_dark));
+        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelected(@IdRes int tabId) {
+                Fragment fragment;
+                switch (tabId) {
+                    case R.id.item_recent:
+                        if(currentFragment != 0) {
+                            toolbar.setSubtitle(RECENT);
+                            fragment = new RecentFragment();
+                            getFragmentManager().beginTransaction().replace(R.id.contentContainer, fragment).commit();
+                            currentFragment = 0;
+                        }
+                        break;
+                    case R.id.item_popular:
+                        if(currentFragment != 1) {
+                            toolbar.setSubtitle(POPULAR);
+                            fragment = new FavouritesFragment();
+                            getFragmentManager().beginTransaction().replace(R.id.contentContainer, fragment).commit();
+                            currentFragment = 1;
+                        }
+                        break;
+                    case R.id.item_me:
+                        if(currentFragment != 2) {
+//                            currentFragment = 2;
+//                            toolbar.setSubtitle(ME);
+                            //TODO
+//                        RecentFragment recentFragment = new RecentFragment();
+//                        getFragmentManager().beginTransaction().replace(R.id.contentContainer, recentFragment).commit();
+                        }
+                        break;
+                }
+            }
+        });
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,18 +81,6 @@ public class HomeActivity extends Activity {
                 startActivity(intent);
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-//        firebaseRecyclerAdapter.startListening();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-//        firebaseRecyclerAdapter.stopListening();
     }
 
     @Override
@@ -104,40 +103,4 @@ public class HomeActivity extends Activity {
         }
         return false;
     }
-
-
-
-    //Test Viewholder
-//    static class ViewHolder extends RecyclerView.ViewHolder {
-//
-//        TextView name;
-//        TextView description;
-//        TextView vote;
-//        TextView uploader;
-//        TextView timestamp;
-//
-//        public ViewHolder(View itemView) {
-//            super(itemView);
-//            name = (TextView) itemView.findViewById(R.id.shortcut_name);
-//            description = (TextView) itemView.findViewById(R.id.shortcut_description);
-//            vote = (TextView) itemView.findViewById(R.id.shortcut_vote_count);
-//            uploader = (TextView) itemView.findViewById(R.id.shortcut_uploader);
-//            timestamp = (TextView) itemView.findViewById(R.id.shortcut_timestamp);
-//        }
-//        public void setName(String name) {
-//            this.name.setText(name);
-//        }
-//        public void setDescription(String description) {
-//            this.description.setText(description);
-//        }
-//        public void setVote(int votes) {
-//            this.vote.setText(votes);
-//        }
-//        public void setUploader(String uploader) {
-//            this.uploader.setText(uploader);
-//        }
-//        public void setTimestamp(int timestamp) {
-//            this.timestamp.setText(timestamp);
-//        }
-//    }
 }

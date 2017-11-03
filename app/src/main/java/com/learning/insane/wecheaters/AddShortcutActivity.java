@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,11 +14,18 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
+import com.learning.insane.wecheaters.Util.Constants;
 import com.learning.insane.wecheaters.model.Shortcut;
+import com.learning.insane.wecheaters.model.User;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
+
 
 public class AddShortcutActivity extends Activity {
 
@@ -25,7 +33,7 @@ public class AddShortcutActivity extends Activity {
 
         ExpandableLayout e;
 
-        public ExpandableTextView(ExpandableLayout e) {
+        ExpandableTextView(ExpandableLayout e) {
             this.e = e;
         }
 
@@ -35,44 +43,79 @@ public class AddShortcutActivity extends Activity {
         }
     }
 
-//    Toolbar toolbar;
     Button previouslyPressed;
     String keySelected;
     Shortcut shortcut;
+    boolean[] controlButtons;
+    String uid;
+
+    DatabaseReference shortcutDatabase;
+    DatabaseReference userDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_shortcut);
 
-        shortcut = new Shortcut();
-        shortcut.setOwner(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        controlButtons = new boolean[8];
+
+        uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        shortcutDatabase = FirebaseDatabase.getInstance().getReference().child(Constants.SHORTCUTS);
+        userDatabase = FirebaseDatabase.getInstance().getReference().child(Constants.USERS).child(uid);
 
         initHoldKeyboard();
         initKeyboards();
-        initExpanders();
+        initExpander();
         initUploadButton();
     }
 
     private void initUploadButton() {
         Button b = findViewById(R.id.button_upload);
         b.setOnClickListener(new View.OnClickListener() {
+            String id;
             @Override
             public void onClick(View view) {
-                shortcut.setName(getName());
-                shortcut.setDescription(getDesciption());
-                shortcut.setKey(keySelected);
-//                shortcut.setTimeStamp(ServerValue.TIMESTAMP);
-                shortcut.previousRequiredShortcutId = "Test prev ID";
-                shortcut.setAppName(getAppName());
 
-                DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("Shortcuts");
-//                DatabaseReference udb = FirebaseDatabase.getInstance().getReference().child("Users")
-                String id = db.push().getKey();
+                shortcut = new Shortcut(
+                        getName(),
+                        getDesciption(),
+                        uid,
+                        getAppName(),
+                        controlButtons[0],
+                        controlButtons[1],
+                        controlButtons[2],
+                        controlButtons[3],
+                        controlButtons[4],
+                        controlButtons[5],
+                        controlButtons[6],
+                        keySelected,
+                        "Test Prev"
+                );
+
+                id = shortcutDatabase.push().getKey();
                 shortcut.setId(id);
-                db.child(id).setValue(shortcut).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+
+                shortcutDatabase.child(id).setValue(shortcut).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+
+                        userDatabase.child(User.SHORTCUT_COUNT).runTransaction(new Transaction.Handler() {
+                            @Override
+                            public Transaction.Result doTransaction(MutableData mutableData) {
+                                Long count = mutableData.getValue(Long.class);
+                                if(count == null) mutableData.setValue(1);
+                                else mutableData.setValue(count+1);
+                                return Transaction.success(mutableData);
+                            }
+
+                            @Override
+                            public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {
+                                Log.d("TRANSACTION : ", "Firebase Transaction done!!!");
+                            }
+                        });
+                        userDatabase.child(Constants.SHORTCUTS).child(id).setValue(shortcut.getId());
                         finish();
                     }
 
@@ -102,28 +145,25 @@ public class AddShortcutActivity extends Activity {
                 view.setBackgroundColor(Color.GRAY);
                 switch (view.getId()) {
                     case R.id.keyboard_control_button_left_ctrl:
-                        shortcut.leftCtrl = !shortcut.leftCtrl;
-                        break;
-                    case R.id.keyboard_control_button_right_ctrl:
-                        shortcut.rightCtrl = !shortcut.rightCtrl;
+                        controlButtons[0] = !controlButtons[0];
                         break;
                     case R.id.keyboard_control_button_left_alt:
-                        shortcut.leftAlt = !shortcut.leftAlt;
-                        break;
-                    case R.id.keyboard_control_button_right_alt:
-                        shortcut.rightAlt = !shortcut.rightAlt;
-                        break;
-                    case R.id.keyboard_control_button_tab:
-                        shortcut.tab = !shortcut.tab;
-                        break;
-                    case R.id.keyboard_control_button_caps:
-                        shortcut.caps = !shortcut.caps;
+                        controlButtons[1] = !controlButtons[1];
                         break;
                     case R.id.keyboard_control_button_left_shift:
-                        shortcut.leftShift = !shortcut.leftShift;
+                        controlButtons[2] = !controlButtons[2];
+                        break;
+                    case R.id.keyboard_control_button_right_ctrl:
+                        controlButtons[3] = !controlButtons[3];
+                        break;
+                    case R.id.keyboard_control_button_right_alt:
+                        controlButtons[4] = !controlButtons[4];
                         break;
                     case R.id.keyboard_control_button_right_shift:
-                        shortcut.rightShift = !shortcut.rightShift;
+                        controlButtons[5] = !controlButtons[5];
+                        break;
+                    case R.id.keyboard_control_button_caps:
+                        controlButtons[6] = !controlButtons[6];
                         break;
                 }
             }
@@ -140,7 +180,7 @@ public class AddShortcutActivity extends Activity {
         }
     }
 
-    private void initExpanders() {
+    private void initExpander() {
         TextView text = findViewById(R.id.letters_and_numbers_textView);
         ExpandableLayout expandableLayout = findViewById(R.id.letters_and_numbers_expander);
         text.setOnClickListener(new ExpandableTextView(expandableLayout));

@@ -26,7 +26,7 @@
         android:layout_margin="16dp"
         android:background="@drawable/rounded_corner_shape"
         android:backgroundTint="#CCCCCC"
-        android:hint="First Name"
+        android:hint="Name"
         android:inputType="textPersonName"
         android:paddingEnd="24dp"
         android:paddingStart="24dp"
@@ -35,25 +35,11 @@
         app:layout_constraintTop_toBottomOf="@+id/app_icon" />
 
     <EditText
-        android:id="@+id/last_name"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:background="@drawable/rounded_corner_shape"
-        android:backgroundTint="#CCCCCC"
-        android:hint="Last Name"
-        android:inputType="textPersonName"
-        android:paddingEnd="24dp"
-        android:paddingStart="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/first_name" />
-
-    <EditText
         android:id="@+id/email_edit_text"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/rounded_corner_shape"
         android:backgroundTint="#CCCCCC"
         android:hint="Email"
@@ -62,7 +48,7 @@
         android:paddingStart="24dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/last_name" />
+        app:layout_constraintTop_toBottomOf="@+id/first_name" />
 
     <EditText
         android:id="@+id/password_edit_text"

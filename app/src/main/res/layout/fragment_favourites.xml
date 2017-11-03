@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/recentRecyclerView"
-    tools:context="com.learning.insane.wecheaters.fragments.RecentFragment">
+    android:id="@+id/favourite_recycler_view"
+    tools:context="com.learning.insane.wecheaters.fragments.FavouritesFragment">
 
 </android.support.v7.widget.RecyclerView>
+
