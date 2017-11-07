@@ -1,7 +1,6 @@
 package com.learning.insane.wecheaters;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -13,6 +12,7 @@ import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.learning.insane.wecheaters.fragments.FavouritesFragment;
+import com.learning.insane.wecheaters.fragments.MyShortcutsFragment;
 import com.learning.insane.wecheaters.fragments.RecentFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
@@ -20,54 +20,51 @@ import com.roughike.bottombar.OnTabSelectListener;
 public class HomeActivity extends Activity {
 
     private Toolbar toolbar;
-    private Button addButton;
     private Integer currentFragment;
 
-
-    public static final String RECENT = "Recent", POPULAR = "Popular", ME = "Me";
+    public static final String RECENT = "Recent", FAVOURITES = "Favourites", ME = "Me";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         toolbar = findViewById(R.id.toolbar);
-        addButton = findViewById(R.id.addShortcutButton);
+        toolbar.setTitle(R.string.app_name);
+        Button addButton = findViewById(R.id.addShortcutButton);
 
         setActionBar(toolbar);
 
-        getFragmentManager().beginTransaction().add(R.id.contentContainer, new RecentFragment()).commit();
+        final RecentFragment recentFragment = new RecentFragment();
+        final FavouritesFragment favouritesFragment = new FavouritesFragment();
+        final MyShortcutsFragment myShortcutsFragment = new MyShortcutsFragment();
+
+        getFragmentManager().beginTransaction().add(R.id.contentContainer, recentFragment).commit();
         currentFragment = 0;
 
         BottomBar bottomBar = findViewById(R.id.bottom_navigation_bar);
-        bottomBar.setActiveTabColor(getResources().getColor(android.R.color.holo_red_dark));
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
-                Fragment fragment;
                 switch (tabId) {
                     case R.id.item_recent:
                         if(currentFragment != 0) {
                             toolbar.setSubtitle(RECENT);
-                            fragment = new RecentFragment();
-                            getFragmentManager().beginTransaction().replace(R.id.contentContainer, fragment).commit();
+                            getFragmentManager().beginTransaction().replace(R.id.contentContainer, recentFragment).commit();
                             currentFragment = 0;
                         }
                         break;
                     case R.id.item_popular:
                         if(currentFragment != 1) {
-                            toolbar.setSubtitle(POPULAR);
-                            fragment = new FavouritesFragment();
-                            getFragmentManager().beginTransaction().replace(R.id.contentContainer, fragment).commit();
+                            toolbar.setSubtitle(FAVOURITES);
+                            getFragmentManager().beginTransaction().replace(R.id.contentContainer, favouritesFragment).commit();
                             currentFragment = 1;
                         }
                         break;
                     case R.id.item_me:
                         if(currentFragment != 2) {
-//                            currentFragment = 2;
-//                            toolbar.setSubtitle(ME);
-                            //TODO
-//                        RecentFragment recentFragment = new RecentFragment();
-//                        getFragmentManager().beginTransaction().replace(R.id.contentContainer, recentFragment).commit();
+                            toolbar.setSubtitle(ME);
+                            getFragmentManager().beginTransaction().replace(R.id.contentContainer, myShortcutsFragment).commit();
+                            currentFragment = 2;
                         }
                         break;
                 }

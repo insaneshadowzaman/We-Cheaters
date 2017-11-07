@@ -23,10 +23,11 @@ public class Shortcut {
     public String previousRequiredShortcutId;
     public int voteCount = 0;
 
+    //required for firebase
     public Shortcut() {
-        //required for firebase
     }
 
+    //Required for ViewHolder
     public Shortcut(
             String name,
             String description,
@@ -56,6 +57,10 @@ public class Shortcut {
         this.key = key;
         this.previousRequiredShortcutId = previousRequiredShortcutId;
         voteCount = 0;
+    }
+
+    public Shortcut(String id) {
+        this.id = id;
     }
 
     public void setId(String id) {

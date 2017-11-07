@@ -21,8 +21,6 @@ import com.learning.insane.wecheaters.model.Shortcut;
 public class RecentFragment extends Fragment {
 
     private FirebaseRecyclerAdapter<Shortcut, ShortcutViewHolder> firebaseRecyclerAdapter;
-    private RecyclerView mRecyclerView;
-    private Query mDatabaseQuery;
 
     public RecentFragment() {
         // Required empty public constructor
@@ -33,9 +31,12 @@ public class RecentFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        mRecyclerView =  (RecyclerView) inflater.inflate(R.layout.fragment_recent, container, false);
+        RecyclerView mRecyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_recent, container, false);
         mRecyclerView.setHasFixedSize(true);
-        mDatabaseQuery = FirebaseDatabase.getInstance().getReference().child(Constants.SHORTCUTS).orderByKey().limitToFirst(50);
+
+//        Toast.makeText(getActivity(), "Created Fragment", Toast.LENGTH_LONG).show();
+
+        Query mDatabaseQuery = FirebaseDatabase.getInstance().getReference().child(Constants.SHORTCUTS).orderByKey().limitToFirst(50);
         getActivity().getActionBar().setTitle("Favourites");
 
         //RecyclerAdapter Code

@@ -24,27 +24,28 @@ import com.learning.insane.wecheaters.Util.ShortcutViewHolder;
 import com.learning.insane.wecheaters.model.Shortcut;
 import com.learning.insane.wecheaters.model.User;
 
-public class FavouritesFragment extends Fragment {
+public class MyShortcutsFragment extends Fragment {
 
     private DatabaseReference shortcutsDb;
     private FirebaseRecyclerAdapter<String, ShortcutViewHolder> mFirebaseRecyclerAdapter;
 
-    public FavouritesFragment() {
+    public MyShortcutsFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_favourites, container, false);
+        RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_my_shortcuts, container, false);
         recyclerView.setHasFixedSize(true);
 
 //        Toast.makeText(getActivity(), "Created Fragment", Toast.LENGTH_LONG).show();
 
         shortcutsDb = FirebaseDatabase.getInstance().getReference().child(Constants.SHORTCUTS);
-        Query mQuery = FirebaseDatabase.getInstance().getReference().child(Constants.USERS).child(
-                FirebaseAuth.getInstance().getCurrentUser().getUid()
-        ).child(User.FAV_SHORTCUTS).orderByKey().limitToFirst(50);
+        Query mQuery = FirebaseDatabase.getInstance().getReference()
+                .child(Constants.USERS)
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(User.SHORTCUTS).orderByKey().limitToFirst(50);
 
         FirebaseRecyclerOptions<String> options = new FirebaseRecyclerOptions.Builder<String>()
                 .setQuery(mQuery, String.class).build();
@@ -89,5 +90,6 @@ public class FavouritesFragment extends Fragment {
     public void onStop() {
         mFirebaseRecyclerAdapter.stopListening();
         super.onStop();
+
     }
 }

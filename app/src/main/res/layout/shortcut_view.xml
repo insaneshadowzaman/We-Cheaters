@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout android:id="@+id/shortcut_container"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shortcut_container"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:layout_marginEnd="1dp"
+    android:layout_marginStart="2dp"
+    android:background="#FFFFFF"
+    android:elevation="3dp"
     android:paddingBottom="12dp"
-    android:paddingRight="16dp"
-    android:paddingStart="16dp"
-    android:paddingTop="8dp">
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp">
 
     <TextView
         android:id="@+id/shortcut_vote_count"
@@ -43,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Uploaded by ..."
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/shortcut_vote_count"
         app:layout_constraintTop_toBottomOf="@+id/shortcut_name" />
 
@@ -87,10 +92,11 @@
 
     <Button
         android:id="@+id/shortcut_fav_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
+        android:layout_width="39dp"
+        android:layout_height="35dp"
+        android:enabled="false"
         android:text="FAV"
+        android:padding="0dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/shortcut_name" />
 

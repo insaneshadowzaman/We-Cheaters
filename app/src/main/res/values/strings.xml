@@ -141,7 +141,6 @@
     <string name="hold_key_right_alt">right-ALT</string>
     <string name="hold_key_fn">function</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!--Hold keys-->
+    <!-- End hold keys -->
+
 </resources>

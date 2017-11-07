@@ -5,19 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EEEEEE"
     tools:context="com.learning.insane.wecheaters.HomeActivity">
 
 
     <Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primaryDarkColor"
         style="?android:toolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/primaryDarkColor"
+        android:elevation="4dp"
         android:paddingStart="24dp"
         android:theme="@style/Base.Theme.AppCompat"
-        android:title="@string/app_name" >
-    </Toolbar>
+        android:title="@string/app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/contentContainer"
@@ -28,39 +32,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/test_recycler_view"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="0dp"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@id/toolbar"-->
-        <!--app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar"/>-->
-
-
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_alignParentBottom="true"
+        android:elevation="8dp"
         app:bb_tabXmlResource="@xml/bottom_nav_tabs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:bb_activeTabColor="#000000"
+        app:bb_inActiveTabColor="#121016"
         app:layout_constraintStart_toStartOf="parent">
+        <!--app:bb_behavior="shifting"-->
 
     </com.roughike.bottombar.BottomBar>
 
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/addShortcutButton"-->
+        <!--android:layout_width="56dp"-->
+        <!--android:layout_height="56dp"-->
+        <!--android:background="@drawable/fab"-->
+        <!--android:src="@android:drawable/ic_input_add"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:elevation="12dp"/>-->
+
     <Button
         android:id="@+id/addShortcutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="24dp"
-        android:src="@android:drawable/ic_menu_add"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/fab"
         android:text="+"
-        android:textSize="25sp"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:gravity="center"
+        android:elevation="8dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
         app:layout_constraintEnd_toEndOf="@+id/bottom_navigation_bar" />
-
 
 </android.support.constraint.ConstraintLayout>

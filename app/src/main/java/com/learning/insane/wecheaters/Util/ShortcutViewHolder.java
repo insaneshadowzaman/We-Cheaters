@@ -1,5 +1,6 @@
 package com.learning.insane.wecheaters.Util;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
+import com.learning.insane.wecheaters.ProfileActivity;
 import com.learning.insane.wecheaters.R;
 import com.learning.insane.wecheaters.model.Shortcut;
 import com.learning.insane.wecheaters.model.User;
@@ -29,12 +31,15 @@ public class ShortcutViewHolder extends RecyclerView.ViewHolder {
     private TextView vote;
     private TextView uploader;
     private LinearLayout linearLayout;
-    private View.OnClickListener clickListener;
     private ExpandableLayout expandableLayout;
     private Button favButton;
     private Transaction.Handler incHandler;
     private Transaction.Handler decHandler;
     private Boolean isFav;
+    private static final DatabaseReference userDb = FirebaseDatabase.getInstance().getReference()
+                .child(Constants.USERS).child(
+                        FirebaseAuth.getInstance().getCurrentUser().getUid()
+                );
 
     public ShortcutViewHolder(View itemView) {
         super(itemView);
@@ -44,7 +49,7 @@ public class ShortcutViewHolder extends RecyclerView.ViewHolder {
         uploader = itemView.findViewById(R.id.shortcut_uploader);
         linearLayout = itemView.findViewById(R.id.shortcut_key_layout);
         expandableLayout = itemView.findViewById(R.id.description_expander);
-        clickListener = new View.OnClickListener() {
+        View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 expandableLayout.toggle();
@@ -58,17 +63,13 @@ public class ShortcutViewHolder extends RecyclerView.ViewHolder {
 
         final DatabaseReference shortcutDb = FirebaseDatabase.getInstance().getReference()
                 .child(Constants.SHORTCUTS).child(shortcut.getId());
-        final DatabaseReference userDb = FirebaseDatabase.getInstance().getReference()
-                .child(Constants.USERS).child(
-                        FirebaseAuth.getInstance().getCurrentUser().getUid()
-                );
 
-        favButton.setEnabled(false);
         setName(shortcut.getName());
         setDescription(shortcut.getDescription());
         setOwner(shortcut.getOwner());
         setVote(shortcut.getVoteCount());
-        setHoldKey(getLinearLayout(), shortcut);
+        setHoldKey(shortcut);
+
         isFav = false;
         incHandler = new Transaction.Handler() {
             @Override
@@ -98,8 +99,8 @@ public class ShortcutViewHolder extends RecyclerView.ViewHolder {
             }
         };
 
-
-        userDb.child(User.FAV_SHORTCUTS).child(shortcut.getId()).addListenerForSingleValueEvent(new ValueEventListener() {
+        // Set text to FAV button
+        userDb.child(User.FAV_SHORTCUTS).child(shortcut.getId()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String id = dataSnapshot.getValue(String.class);
@@ -112,7 +113,9 @@ public class ShortcutViewHolder extends RecyclerView.ViewHolder {
 
             }
         });
+
         favButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 favButton.setEnabled(false);
@@ -120,18 +123,18 @@ public class ShortcutViewHolder extends RecyclerView.ViewHolder {
                 if(isFav) {
                     shortcutDb.child(Shortcut.VOTE_COUNT).runTransaction(decHandler);
                     uDb.setValue(null);
-//                    favButton.setText("FAV");
                 } else {
                     shortcutDb.child(Shortcut.VOTE_COUNT).runTransaction(incHandler);
                     uDb.setValue(shortcut.getId());
-//                    favButton.setText("UnFAV");
                 }
                 favButton.setEnabled(true);
             }
         });
         favButton.setEnabled(true);
 
+
     }
+
 
     private void setName(String name) {
         this.name.setText(name);
@@ -141,7 +144,7 @@ public class ShortcutViewHolder extends RecyclerView.ViewHolder {
         this.description.setText(description);
     }
 
-    private void setOwner(String ownerId) {
+    private void setOwner(final String ownerId) {
         FirebaseDatabase.getInstance().getReference().child(Constants.USERS).child(ownerId)
                 .child(User.NAME).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -155,13 +158,21 @@ public class ShortcutViewHolder extends RecyclerView.ViewHolder {
 
             }
         });
+        uploader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(uploader.getContext(), ProfileActivity.class);
+                intent.putExtra(User.ID, ownerId);
+                uploader.getContext().startActivity(intent);
+            }
+        });
     }
 
     private void setVote(int vote) {
         this.vote.setText(String.valueOf(vote));
     }
 
-    private void setHoldKey(LinearLayout linearLayout, Shortcut shortcut) {
+    private void setHoldKey(Shortcut shortcut) {
         linearLayout.removeAllViews();
         if(shortcut.isLeftCtrl()) {
             TextView t = new TextView(linearLayout.getContext());
@@ -273,11 +284,6 @@ public class ShortcutViewHolder extends RecyclerView.ViewHolder {
         params.setMarginEnd((int)(density*4));
         t.setLayoutParams(params);
         linearLayout.addView(t);
-
-    }
-
-    private LinearLayout getLinearLayout() {
-        return linearLayout;
     }
 
 }

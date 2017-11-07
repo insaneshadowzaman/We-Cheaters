@@ -2,13 +2,16 @@
     <tab
         id="@+id/item_recent"
         icon="@drawable/ic_recent"
-        title="Recent" />
+        title="Recent"
+        barColorWhenSelected="#DA5959"/>
     <tab
         id="@+id/item_popular"
         icon="@drawable/ic_popular"
-        title="Popular" />
+        title="Popular"
+        barColorWhenSelected="#5B4796"/>
     <tab
         id="@+id/item_me"
         icon="@drawable/ic_me"
-        title="Me" />
+        title="Me"
+        barColorWhenSelected="#47AF47"/>
 </tabs>
