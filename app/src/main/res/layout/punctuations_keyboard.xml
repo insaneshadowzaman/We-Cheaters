@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:minWidth="0dp"
             style="?android:attr/buttonBarButtonStyle"
-            android:text="@string/symbol_39"/>
+            android:text="'"/>
         <Button
             android:id="@+id/keyboard_button_special_40"
             android:layout_width="0dp"
